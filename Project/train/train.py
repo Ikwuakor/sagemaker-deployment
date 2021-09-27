@@ -68,8 +68,22 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
     """
     
     # TODO: Paste the train() method developed in the notebook here.
+    for epoch in range(1, epochs + 1):
+        total_loss = 0.0
+        for data in train_loader:         
+            inputs, labels = data
+                    
+            # zero the parameter gradients
+            optimizer.zero_grad()
 
-    pass
+            # forward + backward + optimize
+            outputs = model(inputs)
+            loss = loss_fn(outputs, labels)
+            loss.backward()
+            optimizer.step()
+            
+            total_loss += loss.data.item()
+        print("Epoch: {}, BCELoss: {}".format(epoch, total_loss / len(train_loader)))
 
 
 if __name__ == '__main__':
