@@ -16,3 +16,5 @@ Please see the [README](https://github.com/udacity/sagemaker-deployment/tree/mas
 
 ![positive_review_1](./img/positive_review_1.png)
 ![positive_review_2](./img/positive_review_2.png)
+
+---
